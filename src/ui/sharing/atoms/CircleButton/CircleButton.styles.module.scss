@@ -1,0 +1,24 @@
+@import "@mixins";
+@import "@constants";
+
+
+.container {
+    @include flex(center, center, 10px, row);
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.principal {
+    background-color: $blue-1;
+}
+
+.secondary {
+    background-color: $white-color;
+    border: 1px solid $blue-secondary;
+    svg {
+        fill: $blue-secondary;
+    }
+}
+

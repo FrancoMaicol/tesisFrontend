@@ -1,0 +1,9 @@
+@import "@mixins";
+@import "@constants";
+
+.button_step_id_card {
+    margin-top: 1rem;
+    @include tablet{
+        margin: 0 auto;
+    }
+}

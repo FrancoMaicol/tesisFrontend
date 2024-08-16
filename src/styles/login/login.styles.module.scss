@@ -1,0 +1,118 @@
+@import "@mixins";
+@import "@constants";
+
+
+@mixin responsive($breakpoint, $width, $padding, $font-size, $line-height, $letter-spacing, $image-size) {
+    @media (max-width: $breakpoint) {
+        width: $width;
+        padding: 0 $padding;
+
+        // background-image: url("../../assets/images/login/background.jpeg");
+        background-repeat: no-repeat;
+        
+
+        .logo {
+            
+            // margin-top: -50%;
+            font-size: $font-size;
+            line-height: $line-height;
+            letter-spacing: $letter-spacing;
+            color: white;
+            text-shadow: 2px 0 $blue-1, -2px 0 $blue-1, 0 2px $blue-1, 0 -2px $blue-1,
+             1px 1px $blue-1, -1px -1px $blue-1, 1px -1px $blue-1, -1px 1px $blue-1;
+            
+            background-color: $blue-1;
+            border-radius: 14px;
+        }
+
+        .image {
+            width: $image-size;
+            height: $image-size;
+            
+        }
+
+    }
+}
+
+
+.container {
+    @include flex(center);
+    width: 100%;
+    height: 100vh;
+}
+
+.left_section {
+    @include flex(center, center, 48px, column);
+    width: 30%;
+    max-width: 496px;
+    height: 100vh;
+    padding: 0 48px;
+
+
+    .logo {
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        font-weight: 700;
+        font-size: 70px;
+        line-height: 98.35px;
+        letter-spacing: 8px;
+        text-align: center;
+        color: $blue-1;
+
+       
+    }
+
+    .image{
+        
+        width: 50px;
+        height: 50px;
+
+        font-weight: 700;
+        font-size: 70px;
+        line-height: 98.35px;
+        letter-spacing: 8px;
+        text-align: center;
+        color: $blue-1;
+        border-radius: 14px;
+
+        background-image: url("../../assets/images/login/logo.png");
+        background-size: contain;
+        background-position: center;
+        background-color: transparent;
+        background-repeat: no-repeat;
+
+        margin-right: 5px;
+
+    }
+
+
+ 
+    @include responsive(1199px, 60%, 16px, 40px, 55px, 5px, 35px);
+    @include responsive(950px, 100%, 32px, 30px, 45px, 4px, 30px);
+
+}
+
+.right_section {
+    width: 70%;
+    max-width: 1016px;
+    height: 100vh;
+    background-image: url("../../assets/images/login/background.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
+    @media (max-width: 1240px) {
+
+        display: none;
+        
+    }
+
+
+}
+
+
+

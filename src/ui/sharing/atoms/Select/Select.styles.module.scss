@@ -1,0 +1,155 @@
+@import "@mixins";
+@import "@constants";
+
+$maxHeightToogle: 200px;
+$selectHeight: 56px;
+
+.container {
+    @include flex(space-between, flex-start, 8px, column);
+    width: 100%;
+
+    .select_container {
+        @include flex(space-between, center, 0px, row);
+        @include font(16px, 500);
+        width: 100%;
+        height: $selectHeight;
+        background-color: $white-color;
+        padding: 0px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+        position: relative;
+
+        .top_text {
+            position: absolute;
+            top: -12px;
+            padding: 0 4px;
+            color: $black-color;
+            background-color: $white-color;
+            font-size: 14px;
+            opacity: 0;
+        }
+        .top_text_filled, .top_text_disabled, .top_text_error {
+            opacity: 1;
+        }
+        .top_text_error {
+            color: $red-1;
+        }
+        .top_text_disabled{
+            background-color: $gray-bg-input-disable;
+        }
+        .icon_container {
+            @include flex(center, center, 0px, row);
+            transition: transform 0.3s ease-in-out;
+        }
+        .icon_container_toggled {
+            transform: rotate(-180deg);
+        }
+
+        .toogle_menu {
+            position: absolute;
+            top: $selectHeight - 1px; //abre hacia abajo
+            //bottom: $selectHeight - 1px; // abre hacia arriba 
+            left: 0;
+            background-color: $white-color;
+            width: 100%;
+            border-radius: 4px;
+            z-index: 30;
+            will-change: transform;
+
+            max-height: $maxHeightToogle;
+            overflow-y: scroll;
+            border: 1px solid $gray-1;
+            color: $gray-1;
+
+            .top_text_selected{
+                color: $black-color;
+            }
+
+            .top_text_filled {
+                opacity: 1;
+            }
+        
+            .toogle_item {
+                padding: 8px 12px;
+                margin: 0;
+                font-size: 16px;
+                font-weight: 500;
+
+                &:hover {
+                    background-color: $neutral-color;
+                }
+            }
+        }
+
+        .toggle_menu_true{
+            display: block;
+        }
+        .toggle_menu_false{
+            display: none;
+        }
+    }
+
+
+    .helper_text {
+        @include font(14px, 500);
+        color: $red-1;
+    }
+        
+}
+
+
+.error {
+    svg {
+       fill: $red-1;
+    }
+    .select_container {
+        border: 1px solid $red-1;
+        color: $red-1;
+    }
+    .helper_text, .top_text{
+        color: $red-1;
+    }
+}
+
+.active {
+    svg {
+       fill: $blue-1;
+    }
+    .select_container {
+        border: 1px solid $blue-1;
+    }
+}
+
+.default {
+    svg {
+       fill: $gray-1;
+    }
+    .select_container {
+        border: 1px solid $gray-1;
+        color: $gray-1;
+    }
+}
+
+.filled {
+    svg {
+       fill: $black-color;
+    }
+    .select_container {
+        border: 1px solid $black-color;
+        color: $black-color;
+    }
+}
+
+.disabled {
+    svg {
+       fill: $gray-1;
+    }
+    .select_container {
+        border: 1px solid $gray-1;
+        background-color: $gray-bg-input-disable;
+        color: $gray-1;
+    }
+
+}
+
+.required {}

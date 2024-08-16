@@ -1,0 +1,318 @@
+@import "@mixins";
+@import "@constants";
+
+.main_container {
+    background-color: $white-color;
+    border-radius: 0.5rem;
+    padding: 0rem 2rem 2rem;
+    @include mobile{
+        margin: 0;
+        border-radius: 0;
+        padding: 1rem;
+        height: auto;
+    }
+    @include tablet{
+        margin: 2rem;
+    }
+    @include tablet-xl{
+        margin: 2rem 6rem;
+    }
+    @include desktop {
+        margin: 2rem 11.625rem;
+    }
+}
+
+main p.info_container__text{
+  color: $black-color;
+  font-family: 'Manrope';
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  padding: 0;
+  @include tablet{
+    margin-right: 0;
+  }
+  @include tablet-xl{
+    margin-right: 2rem;
+  }
+  @include desktop{
+    margin-right: 2rem;
+  }
+}
+
+.d_none{
+    @include mobile{
+        display: none;
+    }
+}
+
+.d_md_none{
+    @include tablet{
+        display: none;
+    }
+}
+
+.d_xl_none{
+    @include tablet-xl{
+        display: none;
+    }
+}
+
+.d_lg_none{
+    @include desktop{
+        display: none;
+    }
+}
+
+.d_block{
+    @include mobile{
+        display: block;
+    }
+}
+
+.d_md_block{
+    @include tablet{
+        display: block;
+    }
+}
+
+.d_xl_block{
+    @include tablet-xl{
+        display: block;
+    }
+}
+
+.d_lg_block{
+    @include desktop{
+        display: block;
+    }
+}
+
+.d_flex{
+    @include mobile{
+        display: flex;
+    }
+}
+
+.d_md_flex{
+    @include tablet{
+        display: flex;
+    }
+}
+
+.d_xl_flex{
+    @include tablet-xl{
+        display: flex;
+    }
+}
+
+.d_lg_flex{
+    @include desktop{
+        display: flex;
+    }
+}
+
+.mt_auto{
+    @include mobile{
+        margin-top: auto;
+    }
+}
+
+h2{
+  &.title_blue {
+    font-family: 'Manrope', sans-serif;
+    color: $blue-principal;
+    font-size: 2rem;
+    font-weight: 700;
+    font-style: normal;
+    padding: 2rem 0;
+    text-align: center;
+    @include mobile {
+        display: none;
+    }
+  }
+  &.title_gray{
+    font-family: 'Manrope', sans-serif;
+    color: $gray-1;
+    padding: 2rem 0;
+    text-align: center;
+    font-size: 2rem;
+    @include mobile {
+        font-size: 24px;
+    }
+  }
+}
+
+.card{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 2rem;
+  @include tablet{
+    margin-right: 0;
+  }
+    @include tablet-xl{
+        margin-right: 2rem;
+    }
+    @include desktop{
+        margin-right: 2rem;
+    }
+  border-radius: 0.5rem;
+  background-color: $blue-step-complete;
+}
+.card__item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 1rem;
+
+  svg{    
+    margin-right: 1rem;
+  }
+}
+
+.image_container{
+  @include mobile{
+        width: 100%;
+        margin-top: 2rem;
+    }
+  @include tablet{
+        margin: 2rem auto;
+        width: 100%;
+        max-width: 534px;
+    }
+    @include tablet-xl{
+        width: 50%;
+    }
+    @include desktop{
+        width: 50%;
+        aspect-ratio: 16/9;
+    }
+    min-height: 26.375rem;
+  border-radius: 0.5rem;
+  border: 0.125rem dashed $blue-principal;
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  > a{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-decoration: none;
+    text-wrap: nowrap;
+  }
+}
+
+.image_container_h_auto {
+    min-height: auto;
+    // height: auto;
+}
+
+.image_container__button__show{
+  display: block;
+}
+
+.image_container__button__hidden{
+  display: none;
+}
+
+.image_container__taked_image{
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5rem;
+  object-fit: contain;
+
+  &[src=""]{
+    display: none;
+  }
+}
+
+.image_container__taked_image__hidden{
+  display: none;
+}
+
+.image_container__taked_image__show{
+  display: block;
+}
+
+.info_container__button{
+    @include mobile{
+        width: 100%;
+        justify-content: center;
+        margin-top: 2rem;
+    }
+    @include tablet{
+        width: 100%;
+        justify-content: center;
+        margin-top: 0rem;
+    }
+    @include tablet-xl{
+        width: 60%;
+        margin-top: 2rem;
+    }
+    @include desktop{
+        width: min-content;
+        margin-top: 2rem;
+    }
+  
+  font-family: 'Manrope', sans-serif;
+  border-radius: 2rem;
+  background-color: $blue-principal;
+  font-size: 1rem;
+  color: $white-color;
+  border: none;
+  padding: 0rem 1rem;
+  gap: 1rem;
+  height: 2.5rem;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+}
+
+.info_container__button__disabled{
+  opacity: 0.28;
+}
+
+.info_container__button__enabled{
+  opacity: 1;
+  cursor: pointer;
+  width: 45%;
+
+}
+
+.span_error{
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    color: $red-text;
+    background-color: $red-bg;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: normal;
+    border-radius: 4px;
+    border: 1px solid $red-bg;
+    margin: 0px 0px 16px auto;
+    padding: 1rem;
+    z-index: 1;
+}
+
+.span_success{
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    color: $green-text;
+    background-color: $green-bg;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: normal;
+    border-radius: 4px;
+    border: 1px solid $green-bg;
+    margin: 0px 0px 16px auto;
+    padding: 1rem;
+    z-index: 1;
+}

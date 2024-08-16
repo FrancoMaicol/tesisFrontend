@@ -1,0 +1,118 @@
+@import "@mixins";
+@import "@constants";
+
+.container {
+    @include flex(space-between, flex-start, 8px, column);
+    width: 100%;
+    position: relative;
+
+    .top_text {
+        position: absolute;
+        padding: 0 4px;
+        top: -10px;
+        left: 12px;
+        font-size: 14px;
+        font-weight: 500;
+        background-color: $white-color;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .top_text_focus, .top_text_filled, .top_text_disabled {
+        opacity: 1;
+    }
+    .top_text_filled {
+        color: $black-color;
+    }
+    .top_text_disabled {
+        background-color: $gray-bg-input-disable;
+    }
+
+    .input_container{
+        @include flex(space-between, center, 8px, row);
+        width: 100%;
+        background-color: $white-color;
+        min-height: 56px;
+        padding: 0 12px;
+        border-radius: 4px;
+
+        input {
+            border: none;
+            width: 100%;
+            outline: none;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        input::placeholder{
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+    }
+
+    .helper_text {
+        font-size: 14px;
+        font-weight: 500;
+    }
+    
+}
+
+.error {
+    svg {
+       fill: $red-1;
+    }
+    .input_container {
+        border: 1px solid $red-1;
+    }
+    .helper_text, .top_text{
+        color: $red-1;
+    }
+}
+
+.active {
+    svg {
+       fill: $blue-1;
+    }
+    .input_container {
+        border: 1px solid $blue-1;
+    }
+}
+
+.default {
+    svg {
+       fill: $gray-1;
+    }
+    .input_container {
+        border: 1px solid $gray-1;
+    }
+}
+
+.filled {
+    svg {
+       fill: $black-color;
+    }
+    .input_container {
+        border: 1px solid $black-color;
+    }
+}
+
+.disabled {
+    svg {
+        fill: $gray-1;
+    }
+    .input_container {
+        border: 1px solid $gray-1;
+        background-color: $gray-bg-input-disable;
+        color: $gray-1;
+        input {
+            background-color: $gray-bg-input-disable;
+            color: $gray-1;
+            user-select: none;
+        }
+    }
+}
+
+.required {}
+
+

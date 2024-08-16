@@ -1,0 +1,18 @@
+@import "@mixins";
+@import "@constants";
+
+.radio_button_item {
+    @include flex(flex-start, center, 8px, row);
+
+    .circle {
+        border: 1px solid $gray-1;
+        border-radius: 100%;
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+    }
+
+    .circle_filled {
+        border: 5px solid $blue-principal;
+    }
+}

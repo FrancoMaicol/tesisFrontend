@@ -1,0 +1,38 @@
+@import "@mixins";
+@import "@constants";
+
+.container {
+    @include flex(space-between, center, 32px, column);
+    width: 100%;
+
+    .title {
+        width: 100%;
+        @include font(32px, 700);
+        line-height: 43.71px;
+        text-align: center;
+        color: $blue-1;
+        margin: 0px;
+    }
+
+    .subtitle {
+        @include font(20px, 500);
+    }
+
+    .form {
+        @include flex(center, center, 32px, column);
+        width: 100%;
+
+        .instruccions {
+            @include font(14px, 500);
+            color: $gray-1;
+            text-align: left;
+        }
+
+        .buttons_container {
+            @include flex(space-between, flex-start, 16px, column);
+            width: 100%;
+        }
+    }
+}
+
+

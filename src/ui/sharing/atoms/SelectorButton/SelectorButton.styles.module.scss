@@ -1,0 +1,29 @@
+@import "@mixins";
+@import "@constants";
+
+.button {
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid #636769;
+    background: #FFF;
+    color: #0E2954;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    cursor: pointer;
+    min-width: 124px;
+    text-align: center;
+
+    &:hover {
+        border: 1px solid #0E2954;
+    }
+}
+.selected_button {
+    background-color: #19A7CE;
+    color: $white-color;
+    border: none;
+    &:hover {
+        border: none;
+    }
+}

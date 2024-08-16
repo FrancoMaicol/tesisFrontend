@@ -1,0 +1,154 @@
+@import "@mixins";
+@import "@constants";
+
+
+.nav{
+  position: sticky;
+  top: 0;
+  background-color: $blue-principal;
+  max-height: 6.125rem;
+  padding: 1rem 1.5rem;
+  z-index: 1000;
+
+  .profile{
+
+      width: 300px;
+      height: 300px;
+      color: white;
+      background-image: url('/./src/assets/images/authentication/profile.jpg');
+
+  }
+
+  ul{
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    padding-inline-start: 0;
+
+    li{
+      font-family: 'Manrope', sans-serif;
+      color: $white-color;
+        @include tablet{
+          display: flex;
+          flex-direction: column;
+        }
+        @include tablet-xl{
+          display: flex;
+          flex-direction: row;
+        }
+        @include desktop{
+          display: flex;
+          flex-direction: row;
+        }
+      &.logo{
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 0.45rem;
+        
+        line-height: normal;
+        @include mobile{
+          font-size: 24px;
+        }
+        @include tablet{
+            font-size: 2rem;
+          }
+          
+          @include tablet-xl{
+            font-size: 48px;
+            text-align: center;
+        }
+          @include desktop{
+            font-size: 48px;
+            text-align: center;
+        }
+      }
+      .image{
+        
+        width: 50px;
+        height: 50px;
+
+        font-weight: 700;
+        font-size: 70px;
+        line-height: 98.35px;
+        letter-spacing: 8px;
+        text-align: center;
+        color: $blue-1;
+        border-radius: 14px;
+
+        background-image: url("../../../assets/images/login/logo.png");
+        background-size: contain;
+        background-position: center;
+        background-color: transparent;
+        background-repeat: no-repeat;
+
+        margin-right: 5px;
+
+      }
+      .profile{
+
+          width: 60px;
+          height: 60px;
+
+          background-image: url("../../../assets/images/authentication/profile.png");
+          background-size: contain;
+          background-position: center;
+          background-color: $blue-secondary;
+          background-repeat: no-repeat;
+
+          border: 2px solid white;
+          border-radius: 100%;
+
+          -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
+          box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+
+      }
+      .profile:hover{
+
+        scale: 1.1;
+        transition: all 0.3s;
+
+      }
+      span.subtitle_2{
+        color: #F7F7F7BF;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.125rem;
+        line-height: normal;
+        text-align: center;
+        letter-spacing: 0;
+        @include mobile{
+          display: none;
+        }
+        @include tablet{
+
+        }
+        @include tablet-xl{
+            margin-top: auto;
+            padding: 0.5rem 1rem;    
+        }
+        @include desktop{
+            margin-top: auto;
+            padding: 0.5rem 1rem;    
+        }
+      }
+      h2{
+        @include mobile{
+          font-size: 18px;
+          text-wrap: nowrap;
+        }
+        @include tablet{
+          font-size: 28px;
+        }
+        @include tablet-xl{
+            font-size: 2rem;
+        }
+        @include desktop{
+            font-size: 2rem;
+        }
+      }
+    }
+    }
+}

@@ -1,0 +1,75 @@
+@import "@mixins";
+@import "@constants";
+
+
+
+.container {
+    @include flex(space-between, center, 48px, column);
+    width: 100%;
+    
+    .form {
+        @include flex(space-between, flex-start, 32px, column);
+        width: 100%;
+
+        .form_title {
+            width: 100%;
+            @include font(32px, 700);
+            line-height: 43.71px;
+            text-align: center;
+            color: $blue-1;
+            margin: 0px;
+
+            @media (max-width: 1196px) {
+                
+                color: $white-color;
+                text-shadow: 2px 0 $blue-1, -2px 0 $blue-1, 0 2px $blue-1, 0 -2px $blue-1,
+                1px 1px $blue-1, -1px -1px $blue-1, 1px -1px $blue-1, -1px 1px $blue-1;
+                
+            }
+
+        }
+        .error_span {
+            color: $red-1;
+            @include font(14px, 500);
+        }
+        .span_forgot_password {
+            font-family: $primary-font;
+            margin-top: -20px;
+            color: $blue-1;
+            @include font(12px, 500);
+            text-align: left;
+            cursor: pointer;
+
+        }
+        .remeber_container {
+            @include flex(space-between, center, 0px, row);
+            width: 100%;
+            .remeberme_span {
+                @include font(16px, 500);
+
+            }
+            > div { //checkbox
+                @include flex(center, center, 0px, row);
+                margin: 0;
+                svg {
+                    width: 16px;
+                    height: 16px;
+                }
+                
+            }
+
+        }
+
+        .signup{
+
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            font-size: 14px;
+            color: $blue-1;
+
+        }
+    }
+}
+
+

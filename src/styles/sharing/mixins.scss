@@ -1,0 +1,50 @@
+@mixin flex(
+    $justify: flex-start, 
+    $align: center, 
+    $gap: 0px, 
+    $direction: row, 
+    $wrap: nowrap 
+) {
+    display: flex;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+    gap: $gap;
+    justify-content: $justify;
+    align-items: $align;
+}
+ 
+// 👷🚧 work on progress
+@mixin grid($rows: 1, $columns: 1fr, $gap: 0px){
+    display: grid;
+    grid-template-columns: repeat($row, $columns);
+    grid-gap: $gap;
+}
+
+@mixin font($size: 1px, $weight: normal){
+    font-size: $size;
+    font-weight: $weight;
+}
+
+@mixin mobile($size: 767px){
+    @media (max-width: $size){
+        @content;
+    }
+}
+
+@mixin tablet($min_size: 768px, $max_size: 1024px){
+    @media (min-width: $min_size) and (max-width: $max_size){
+        @content;
+    }
+}
+
+@mixin tablet-xl($min_size: 1025px, $max_size: 1399px){
+    @media (min-width: $min_size) and (max-width: $max_size){
+        @content;
+    }
+}
+
+@mixin desktop($size: 1400px){
+    @media (min-width: $size){
+        @content;
+    }
+}

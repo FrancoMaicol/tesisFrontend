@@ -1,0 +1,69 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+
+      /* - - - - - - - - - - ASSETS - - - - - - - - - - */
+      "@images/*": ["./src/assets/images/*"], ///🔥 images by modules ??? 
+      "@icons": ["./src/assets/icons/index.ts"],
+      "@media/*": ["./src/assets/media/*"],
+
+      /* - - - - - - - - - - LOGIC - - - - - - - - - - */
+      "@utils/*": ["./src/logic/utils/*"],
+      "@consts/*": ["./src/logic/consts/*"], ///🔥 remove consts
+      "@context": ["./src/logic/context/index.ts"], ///🔥 context are defined by modules, put index.ts
+      "@services/*": ["./src/logic/services/*"], ///🔥 services are defined by modules, put index.ts
+
+      /* - - - - - - - - - - STYLES - - - - - - - - - - */
+      "@home/styles/*": ["./src/styles/home/*"], ///🔥 remove
+      "@login/styles/*": ["./src/styles/login/*"], ///🔥 remove
+      "@signup/styles/*": ["./src/styles/signup/*"], ///🔥 remove
+      "@admin/styles/*": ["./src/styles/admin/*"], ///🔥 remove
+      "@mixins": ["./src/styles/sharing/mixins.scss"],
+      "@constants": ["./src/styles/sharing/constants.scss"],
+
+      /* - - - - - - - - - - TYPES - - - - - - - - - - */
+      "@types": ["./src/types/index.ts"], ///🔥 REMOVE INDEX AS A GENERAL, I NEED TYPES BY MODULES
+      "@sharing/types/*" : ["./src/types/sharing/*"], ///🔥 TYPES are defined by modules, put index.ts
+      "@CoberturasTable/types/*" : ["./src/types/coberturasTable/*"], ///🔥 TYPES are defined by modules, put index.ts
+
+      /* - - - - - - - - - - UI - - - - - - - - - - */
+      "@sharing/atoms": ["./src/ui/sharing/atoms"],
+      "@sharing/molecules": ["./src/ui/sharing/molecules"],
+      "@sharing/organisms": ["./src/ui/sharing/organisms"],
+
+      "@adminLayout/ui/*" : ["./src/ui/adminLayout/*"],
+      "@nuevaCotizacion/ui": ["./src/ui/nuevaCotizacion/index.ts"],
+      "@cotizaciones/ui/*" : ["./src/ui/cotizaciones/*"], 
+      "@detalleCotizacion/ui/*" : ["./src/ui/detalleCotizacion/*"], 
+      "@emisiones/ui/*" : ["./src/ui/emisiones/*"], 
+      "@detalleEmision/ui/*" : ["./src/ui/detalleEmision/*"], 
+      "@suscripciones/ui/*" : ["./src/ui/suscripciones/*"], 
+      "@detalleSuscripcion/ui/*" : ["./src/ui/detalleSuscripcion/*"], 
+      "@launcher/ui/*" : ["./src/ui/launcher/*"], 
+      "@coberturasTable/ui/*" : ["./src/ui/coberturasTable/*"], 
+      "@login/ui/*" : ["./src/ui/login/*"],
+      "@signup/ui/*" : ["./src/ui/signup/*"],
+      "@cards/ui/*" : ["./src/ui/cards/*"],
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
+}

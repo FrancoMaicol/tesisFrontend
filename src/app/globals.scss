@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+@import "@constants";
+:root {
+  box-sizing: border-box;  
+}
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $primary-font;
+  font-style: normal;
+  line-height: normal;
+  text-rendering: optimizeSpeed;
+
+}
+input, button, div, main, p{
+  box-sizing: border-box;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+table, tr, td {
+  box-sizing: border-box;
+}

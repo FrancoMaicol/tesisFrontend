@@ -1,0 +1,144 @@
+@import "@mixins";
+@import "@constants";
+
+.card{
+  border: 0.0625rem solid $gray-1;
+  background-color: $white-color;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+
+
+  .card__card_body{
+    width: 100%;
+    display: flex;
+    @include mobile{
+        flex-direction: column;
+        width: 100%;
+    }
+    @include tablet {
+        flex-direction: column;
+        width: 100%;
+    }
+    @include tablet-xl {
+        flex-direction: row;
+    }
+    @include desktop{
+        flex-direction: row;
+    }
+
+    .info_container_left{
+        @include mobile{
+            width: 100%;
+        }
+        @include tablet {
+            width: 100%;
+        }
+        @include tablet-xl{
+            width: 50%;
+        }
+        @include desktop{
+            width: 50%;
+        }
+    }
+  }
+  .card_header{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2.125rem;
+    .card_header__header_title{
+        color: $gray-2;
+        font-family: Manrope;
+        @include mobile {
+            font-size: 1.5rem;
+        }
+        font-size: 2rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+
+    }
+  }
+}
+
+.card_container_items{
+  background-color: $blue-step-complete;
+  border-radius: 0.5rem;
+  
+  margin-top: 2rem;
+  @include mobile{
+    margin-right: 0rem;
+  }
+  @include tablet {
+    width: 100%;
+  }
+  @include tablet-xl{
+    margin-right: 2rem;
+  }
+  @include desktop{
+    margin-right: 2rem;
+  }
+}
+.image_container__taked_image [src=""]{
+  display: none;
+}
+
+.custom_file_upload{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+
+  @include mobile{
+    flex-direction: column;
+    align-items: center;
+  }
+  .container_button_left_image div, .container_button_right_image div{
+    border: none;
+  }
+  .container_button_left_image div span, .container_button_right_image div span{
+    text-wrap: nowrap;
+  }
+  .divider {
+    @include tablet{
+        border-left: 0.0625rem solid $blue-secondary;
+        height: 2.5rem;
+        cursor: default;
+        margin: 0 0.5rem;
+    }
+    @include tablet-xl {
+        border-left: 0.0625rem solid $blue-secondary;
+        height: 2.5rem;
+        cursor: default;
+        margin: 0 0.5rem;
+    }
+    
+    @include desktop {
+        border-left: 0.0625rem solid $blue-secondary;
+        height: 2.5rem;
+        cursor: default;
+        margin: 0 0.5rem;
+    }
+
+  }
+  .divider_horizontal{
+    @include mobile{
+        border-top: 0.0625rem solid $blue-secondary;
+        width: 14rem;
+        cursor: default;
+        margin: 0.5rem 0;
+    }
+  }
+}
+
+.image_container__button__show{
+  display: block;
+}
+
+.image_container__button__hidden, .input_image__d_none {
+  display: none;
+}

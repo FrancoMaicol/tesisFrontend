@@ -1,0 +1,53 @@
+@import "@mixins";
+@import "@constants";
+
+.container {
+    @include flex(center, center, 8px, column);
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100vh; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: $modal-background;
+
+    svg {
+        width: 70px;
+        transform-origin: center;
+        animation: rotate4 2s linear infinite;
+    }
+       
+    circle {
+        fill: none;
+        stroke: #000;
+        stroke-width: 2;
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0;
+        stroke-linecap: round;
+        animation: dash4 1.5s ease-in-out infinite;
+    }
+       
+    @keyframes rotate4 {
+        100% {
+         transform: rotate(360deg);
+        }
+    }
+       
+    @keyframes dash4 {
+        0% {
+         stroke-dasharray: 1, 200;
+         stroke-dashoffset: 0;
+        }
+       
+        50% {
+         stroke-dasharray: 90, 200;
+         stroke-dashoffset: -35px;
+        }
+       
+        100% {
+         stroke-dashoffset: -125px;
+        }
+    }
+
+}
